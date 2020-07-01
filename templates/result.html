@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<center>
+<div class="container">
+<img src="data:image/png;base64,{{ plot_url }}" width=300 height=300>
+
+
+  <h1 class="display-4 text-primary">This image looks like :{{ predicted[0] }}</h1>
+</div>
+</center>
+{% endblock content %}

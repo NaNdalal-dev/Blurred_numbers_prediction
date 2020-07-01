@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container-fluid">
+	<center>
+	<h3 class="text-primary">Blurred Numbers prediction</h3>
+	</center>
+</div>
+<div class="container-fluid">
+<center>
+<form action="{{ url_for('select') }}" method="post">
+<input type="hidden" name="image" value="{{ rand }}">
+<img src="data:image/png;base64,{{ plot_url }}" width=300 height=300>
+	
+<input  class='btn btn-primary' type="submit" value="Select a random image!"> 
+</form>
+
+<form action="{{ url_for('predict') }}" method="post">
+	<input type="hidden" name="image" value="{{ rand }}">
+	<input  class='btn btn-success' type="submit" name="submit" value="Predict">
+
+</form>
+</center>
+</div>
+{% endblock content%}
